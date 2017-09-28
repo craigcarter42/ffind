@@ -7,7 +7,7 @@ file_name=$NAME$T_STAMP$EXT
 usr_input=0
 file_path=''
 
-perfrom_search() {
+perform_search() {
 	if [ $SEARCH_WORD ]; then
 		working_dir=`pwd`
 		results_path="/results/$file_name"
@@ -34,13 +34,13 @@ start() {
 	if [ "$usr_input" == "1" ]; then
 		echo "$(tput setaf 2)::$(tput sgr0) enter a search word:"
 		read -p '>> ' SEARCH_WORD
-		perfrom_search
+		perform_search
 	elif [ "$usr_input" == "2" ]; then
 		echo "$(tput setaf 2)::$(tput sgr0) enter a search word:"
 		read -p '>> ' SEARCH_WORD
 		echo "$(tput setaf 2)::$(tput sgr0) enter starting directory"
 		read -p '>> ' file_path
-		perfrom_search
+		perform_search
 	elif [ "$usr_input" == "3" ]; then
 		cat help.txt; echo
 		start
