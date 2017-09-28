@@ -12,7 +12,7 @@ perfrom_search() {
 		working_dir=`pwd`
 		results_path="/results/$file_name"
 		final_path=$working_dir$results_path
-		echo "$(tput setaf 2)::$(tput sgr0)" "searching..."
+		echo "$(tput setaf 2)::$(tput sgr0) searching..."
 		echo ":: date and time: $DT_STAMP" >> $final_path
 		echo ":: directory: $file_path" >> $final_path
 		echo ":: keyword: $SEARCH_WORD\n" >> $final_path
@@ -23,7 +23,7 @@ perfrom_search() {
 		echo "$(tput setaf 2)::$(tput sgr0) displaying last search result: $file_name"
 		cat $final_path
 	else
-		echo "$(tput setaf 1):: $(tput sgr0) invaild input"
+		echo "$(tput setaf 1)::$(tput sgr0) invaild input"
 		start
 	fi
 }
@@ -48,9 +48,9 @@ start() {
 		echo "$(tput setaf 1)::$(tput sgr0) ffind exited"
 		exit
 	else
-		echo "$(tput setaf 1):: $(tput sgr0) invaild input"
+		echo "$(tput setaf 1)::$(tput sgr0) invaild input"
 		start
 	fi
 }
-echo "$(tput setaf 2):: $(tput sgr0)" "ffind: started"
+echo "$(tput setaf 2)::$(tput sgr0) ffind: started"
 start
