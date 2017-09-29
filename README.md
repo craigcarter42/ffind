@@ -1,6 +1,11 @@
 # ffind
 ffind uses the 'find' command in Unix/Linux to perform searches for file names that contain a certain word. Currently ffind is limited in it's scope and does not make use of the other features that 'find' offers. But soon those features will be added.
 
+# Compatibility:
+- Unix
+- Linux
+- macOS 10.12+
+
 # How to Use:
 
 1. To launch ffind type: sh ffind.sh
