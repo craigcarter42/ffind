@@ -19,3 +19,4 @@ ffind uses the 'find' command in Unix/Linux to perform searches for file names t
 # Upcoming Features: 1.0.1
 - Command line arguments
 - grep searches
+- Handling multple search words
