@@ -1,0 +1,32 @@
+-amin n - The file was last accessed n minutes ago
+-anewer - The file was last accessed more recently than it was modified
+-atime n - The file was last accessed more n days ago
+-cmin n - The file was last changed n minutes ago
+-cnewer - The file was last changed more recently than the file was modified
+-ctime n - The file was last changed more than n days ago
+-empty - The file is empty
+-executable - The file is executable
+-false - Always false
+-fstype type - The file is on the specified file system
+-gid n - The file belongs to group with the ID n
+-group groupname - The file belongs to the named group
+-ilname pattern - Search for a symbolic line but ignore case
+-iname pattern - Search for a file but ignore case
+-inum n - search for a file with the specified node
+-ipath path - search for a path but ignore case
+-iregex expression - search for a expression but ignore case
+-links n - search for a file with the specified number of links
+-lname name - search for a symbolic link
+-mmin n - file's data was last modified n minutes ago
+-mtime n - file's data was last modified n days ago
+-name name - search for a file with the specified name
+-newer name - search for a file edited more recently than the file given
+-nogroup - search for a file with no group id
+-nouser - search for a file with no user attached to it
+-path path - search for a path
+-readable - find files which are readable
+-regex pattern - search for files matching a regular expression
+-type type - search for a particular type
+-uid uid - files numeric user id is the same as uid
+-user name - file is owned by user specified
+-writable - search for files that can be written to
