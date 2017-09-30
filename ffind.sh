@@ -1,5 +1,7 @@
 #!/bin/bash
-
+#
+# CURRENT VERSION 1.0.1
+#
 # get current date:
 DT_STAMP=`date`
 
