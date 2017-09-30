@@ -14,8 +14,11 @@ ffind uses the 'find' command in Unix/Linux to perform searches for file names t
 4. Advanced Search will start the search in any directory you designate
 5. Help will give a list of possible advanced search methods. Note 'currently only wildcard is usable'
 6. e does not take much explaining, it will exit the program
-7. Command line arguments -f -p
 
+# Command Line Arguments:
+You no long required to use the command line interface to select your desired search method. ffind will now respond to a limited number of command line inputs. Including ‘-f’ which signals that the user wishes to perform a search. The second argument is ‘-p’ which indicates that the user wishes to designate a search path.
+:: Example:
+sh ffind.sh -f words -p /path/to/my/file
 
 # Upcoming Features: 1.0.1
 - Command line arguments
