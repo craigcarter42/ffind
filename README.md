@@ -17,7 +17,8 @@ ffind uses the 'find' command in Unix/Linux to perform searches for file names t
 
 # Command Line Arguments:
 You no long required to use the command line interface to select your desired search method. ffind will now respond to a limited number of command line inputs. Including ‘-f’ which signals that the user wishes to perform a search. The second argument is ‘-p’ which indicates that the user wishes to designate a search path.
-:: Example:
+
+- Example:
 sh ffind.sh -f words -p /path/to/my/file
 
 # Upcoming Features: 1.0.1
