@@ -13,8 +13,9 @@ file_name=$name$time_stamp$ext
 
 # get current working directory and make file path:
 working_dir=`pwd`
-results_path="/results/$file_name"
-final_path=$working_dir$results_path
+results="/results/"
+final_path=$working_dir$results$file_name
+short_path=$working_dir$results
 
 # general:
 usr_input=0
@@ -27,18 +28,19 @@ perform_search() {
 	if [ "$SEARCH_WORD" != "" ]; then
 		echo "$(tput setaf 2)::$(tput sgr0) searching..."
 		if [ $file_path ]; then
-			eval cd $file_path # < ---- starting search directory
+			eval cd "$file_path" # < ---- starting search directory
 		else
 			eval cd ~
 			file_path="~"
 		fi
 		echo ":: date and time: $DT_STAMP" >> $final_path
-		echo ":: directory: $file_path" >> $final_path
+		echo ":: search from directory: $file_path" >> $final_path
 		echo ":: keyword: $SEARCH_WORD\n" >> $final_path
 		eval $final_search_word >> $final_path
 		echo "$(tput setaf 2)::$(tput sgr0) end\n"
 		echo "$(tput setaf 2)::$(tput sgr0) displaying last search result: $file_name"
-		cat $final_path
+		cd "$short_path"
+		eval cat "$file_name"
 	else
 		echo "$(tput setaf 1)::$(tput sgr0) invaild input"
 		start
@@ -95,4 +97,3 @@ else
 	echo "$(tput setaf 2)::$(tput sgr0) ffind: started"
 	start
 fi
-
