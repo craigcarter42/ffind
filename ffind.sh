@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# CURRENT VERSION 1.0.1
+# CURRENT VERSION 1.0.2
 #
 # get current date:
 DT_STAMP=`date`
@@ -42,13 +42,13 @@ perform_search() {
 		cd "$short_path"
 		eval cat "$file_name"
 	else
-		echo "$(tput setaf 1)::$(tput sgr0) invaild input"
+		echo "$(tput setaf 1)::$(tput sgr0) invalid input"
 		start
 	fi
 }
 
 start() {
-	echo "$(tput setaf 2)::$(tput sgr0) (1) basic search (2) advanced search (3) help (e) exit"
+	echo "$(tput setaf 2)::$(tput sgr0) ffind: basic search (1) advanced search (2) help (3) exit (e)"
 	read -p '>> ' usr_input
 	if [ "$usr_input" == "1" ]; then
 		echo "$(tput setaf 2)::$(tput sgr0) enter a search word:"
@@ -69,7 +69,7 @@ start() {
 		echo "$(tput setaf 1)::$(tput sgr0) ffind exited"
 		exit
 	else
-		echo "$(tput setaf 1)::$(tput sgr0) invaild input"
+		echo "$(tput setaf 1)::$(tput sgr0) invalid input"
 		start
 	fi
 }
@@ -82,7 +82,7 @@ if [ "$1" = "-f" ] && [ "$3" = "-p" ]; then
 		file_path=$4
 		perform_search
 	else
-		echo "$(tput setaf 1)::$(tput sgr0) invaild input"
+		echo "$(tput setaf 1)::$(tput sgr0) invalid input"
 	fi
 elif [ "$1" = "-f" ]; then
 	if [ $2 ]; then
@@ -91,9 +91,8 @@ elif [ "$1" = "-f" ]; then
 		final_search_word=$ffind$caps$SEARCH_WORD$caps
 		perform_search
 	else
-		echo "$(tput setaf 1)::$(tput sgr0) invaild input"
+		echo "$(tput setaf 1)::$(tput sgr0) invalid input"
 	fi
 else
-	echo "$(tput setaf 2)::$(tput sgr0) ffind: started"
 	start
 fi
