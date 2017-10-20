@@ -1,0 +1,65 @@
+#!/bin/bash
+#v1.0.2
+t1='"*'
+t2='*"'
+args="$@"
+place=0
+#echo ":: args: $#"
+# get current date:
+DT_STAMP=`date`
+
+# create file name:
+ext=".txt"
+name="results_"
+time_stamp=`date +"%T"`
+file_name=$name$time_stamp$ext
+
+if [ -e ~/.xbin/path.ffnd ]; then
+	file_path=`sed -n 1p ~/.xbin/path.ffnd`
+else
+	echo ":: ffind: no path file found. use -setpath to create a new file path"
+fi
+
+for args in $args; do
+if [ $1 = "-setpath" ]; then
+	if [ -e $2 ]; then
+		echo $2 > ~/.xbin/path.ffnd
+		echo ":: ffind: custom output path set"
+		echo ":: $2"
+		exit
+	else
+		echo ":: ffind: no such path"
+		exit
+	fi
+#elif [ $1 = "-c" ]; then
+#	cat_file="1"
+elif [ $args = "-i" ]; then
+	cat ~/.xbin/path.ffnd
+	exit
+elif [ $args = "-ls" ]; then
+	echo ":: ffind: previous results"
+	echo ":: $file_path"
+	ls $file_path
+	exit
+fi
+done
+
+# perform_search() {
+#	do stuff...
+# {
+
+if [ $1 = "-c" ]; then
+	input="$t1${@:2}$t2"
+	echo ":: ffind: searching: $input"
+	eval "find ~ -iname $input >> $file_path/$file_name"
+	echo ":: $file_path"
+	echo ":: ffind: complete"
+	echo "::"
+	cat "$file_path/$file_name"
+else
+	input="$t1$@$t2"
+	echo ":: ffind: searching: $input"
+	eval "find ~ -iname $input >> $file_path/$file_name"
+	echo ":: $file_path"
+	echo ":: ffind: complete"
+fi
